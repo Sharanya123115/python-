@@ -1,0 +1,17 @@
+def generate(self,ind,curr,Open,Close,n):
+    if(ind==2*n and Open==Close):
+        ans.append(curr)
+        return
+    if(Open>n):
+        return
+    self.generate(ind+1,curr+"(",ans,Open+1,close,n)
+    if(Open>Close):
+        self.generate(ind+1,curr+")",ans,Open,Close+1,n)
+    generateParenthesis(self, n: int)->List[str]:
+    ind=0
+    curr=" "
+    ans=[]
+    Open=0
+    close=0
+    self.generate(ind,curr,ans,Open,Close,n)    
+    

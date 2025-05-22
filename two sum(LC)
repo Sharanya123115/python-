@@ -1,0 +1,43 @@
+#first method using 2 pointers
+'''def twoSum(nums,target):  #T.C:-O(N**2)
+    n=len(nums)            #S.C:-O(1)
+    for i in range(0,n):
+        for j in range(i+1,n):
+            if(nums[i]+nums[j]==target):
+                return [i,j]
+nums=list(map(int,input().split()))
+target=int(input())
+print(twoSum(nums,target))'''
+
+#using Optimal method using dictionary
+'''def twoSum(nums,target):
+    d={}  #S.C:-O(N)
+    n=len(nums)
+    for a in range(0,n): #T.C=O(n)
+        b=target-nums[a]
+        if(b in d):
+            return [a,d[b]]
+        else:
+            d[nums[a]]=a
+nums=list(map(int,input().split()))
+target=int(input())
+print(twoSum(nums,target))'''
+
+
+#twosum(sorting the array) Optimal solution using 2 pointers
+'''def twoSum(nums,target): #T.C:-O(log N)
+    n=len(nums)
+    low=0
+    high=n-1
+    while(low<high):
+        Sum=nums[low]+nums[high]
+        if(Sum==target):
+            return "Yes"
+        elif(Sum>target):
+            high-=1
+        elif(Sum<target):
+            low+=1
+    return "NO"
+nums=list(map(int,input().split()))
+target=int(input())
+print(twoSum(nums,target))'''
